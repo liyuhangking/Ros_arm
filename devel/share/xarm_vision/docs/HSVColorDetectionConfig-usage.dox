@@ -1,0 +1,12 @@
+\subsubsection usage Usage
+\verbatim
+<node name="color_detection_demo" pkg="xarm_vision" type="color_detection_demo">
+  <param name="H_min" type="int" value="38" />
+  <param name="H_max" type="int" value="57" />
+  <param name="S_min" type="int" value="36" />
+  <param name="S_max" type="int" value="208" />
+  <param name="V_min" type="int" value="113" />
+  <param name="V_max" type="int" value="255" />
+</node>
+\endverbatim
+

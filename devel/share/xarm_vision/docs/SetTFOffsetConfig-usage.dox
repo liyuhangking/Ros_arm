@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="pub_camera_TF" pkg="xarm_vision" type="pub_camera_TF">
+  <param name="X_offset" type="double" value="0.0" />
+  <param name="Y_offset" type="double" value="0.0" />
+  <param name="Z_offset" type="double" value="0.0" />
+</node>
+\endverbatim
+

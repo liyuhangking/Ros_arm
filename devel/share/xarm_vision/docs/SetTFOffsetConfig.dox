@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~X_offset" : \b [double] X_offset parameter min: -0.05, default: 0.0, max: 0.05
+- \b "~Y_offset" : \b [double] Y_offset parameter min: -0.05, default: 0.0, max: 0.05
+- \b "~Z_offset" : \b [double] Z_offset parameter min: -0.05, default: 0.0, max: 0.05
+

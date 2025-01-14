@@ -1,0 +1,8 @@
+prefix=/home/liyuhang/Ros_arm/install
+
+Name: xarm_vision
+Description: Description of xarm_vision
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lxarm_vision
+Requires: roscpp rospy sensor_msgs std_msgs dynamic_reconfigure message_runtime

@@ -1,0 +1,2 @@
+xarm_description:xarm_moveit_config:xarm_moveit_demo:xarm_vision
+-DCATKIN_DEVEL_PREFIX=/home/liyuhang/Ros_arm/devel -DCMAKE_INSTALL_PREFIX=/home/liyuhang/Ros_arm/install -G Unix Makefiles
