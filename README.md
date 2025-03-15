@@ -4,11 +4,11 @@ This is a project about robotic arm. This project is developed on the basis of h
 # Introduction
 | Software package              |Content                                               |
 | ------------------- | ------------------------------------------------------------ |
-| xarm_driver         | XBot-Arm 真实机械臂驱动包                                    |
-| xarm_description    | XBot-Arm 机械臂 URDF 模型文件包                              |
-| xarm_moveit_config  | 使用 配置助手生成的 XBot-Arm 机械臂 MoveIt!配置和启动功能包  |
-| xarm_moveit_demo    | 使用 MoveIt!的编程接口实现路径规划、避障以及机械臂的抓取和放置 |
-| xarm_vision         | 摄像头启动、相机标定、颜色检测、AR标签识别、手眼标定、自动抓取与放置示例 |
+| camera_driver         | 相机驱动包                                    |
+| yolov8_ros    | YOLOv8检测包                              |
+| arm_control  | 机械臂控制包包  |
+|  coordinate_transformer    | 坐标转换包 |
+| my_robot_description         | 机械臂URDF模型包|
 # Development log
 | Date |  Task   |
 | ---  |  ---     |
