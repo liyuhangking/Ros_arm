@@ -1,0 +1,7 @@
+<launch>
+  <arg name="model" default="$(find my_robot_description)/urdf/my_robot.urdf.xacro"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+
+  <!-- 启动MoveIt! -->
+  <include file="$(find arm_control)/launch/moveit_control.launch"/>
+</launch>
