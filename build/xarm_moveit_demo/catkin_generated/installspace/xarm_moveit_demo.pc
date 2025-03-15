@@ -1,8 +1,0 @@
-prefix=/home/liyuhang/Ros_arm/install
-
-Name: xarm_moveit_demo
-Description: Description of xarm_moveit_demo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: moveit_core moveit_ros_planning moveit_ros_planning_interface
