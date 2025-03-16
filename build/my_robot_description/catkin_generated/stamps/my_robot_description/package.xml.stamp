@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <!-- 包的基本信息 -->
+  <name>my_robot_description</name>
+  <version>0.0.0</version>
+  <description>
+    The my_robot_description package contains the URDF model and configuration files
+    for a 3-DOF robotic arm.
+  </description>
+
+  <!-- 维护者信息 -->
+  <maintainer email="user@todo.todo">Your Name</maintainer>
+  <license>TODO</license>
+
+  <!-- 构建工具依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- 运行时依赖 -->
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  <depend>tf</depend>
+  <depend>tf2_ros</depend>
+  <depend>rviz</depend>
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning</depend>
+  <depend>moveit_ros_planning_interface</depend>
+
+  <!-- 可选：测试依赖 -->
+  <test_depend>rostest</test_depend>
+</package>

@@ -1,0 +1,8 @@
+prefix=/home/liyuhang/Ros_arm/install
+
+Name: my_robot_description
+Description: Description of my_robot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs urdf xacro tf tf2_ros rviz moveit_core moveit_ros_planning moveit_ros_planning_interface
