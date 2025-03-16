@@ -1,2 +1,2 @@
-my_robot_description
+my_robot_description:yolov8_ros
 -DCATKIN_DEVEL_PREFIX=/home/liyuhang/Ros_arm/devel -DCMAKE_INSTALL_PREFIX=/home/liyuhang/Ros_arm/install -G Unix Makefiles

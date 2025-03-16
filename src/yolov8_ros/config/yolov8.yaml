@@ -1,0 +1,5 @@
+# yolov8.yaml
+# model_path: "$(find yolov8_ros)/models/best.pt"
+# confidence_threshold: 0.5
+# iou_threshold: 0.45
+# image_topic: "/camera/image_raw"

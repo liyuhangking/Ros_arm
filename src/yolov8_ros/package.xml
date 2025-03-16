@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>yolov8_ros</name>
+  <version>0.0.0</version>
+  <description>
+    A ROS package for object detection using YOLOv8.
+  </description>
+
+  <maintainer email="user@todo.todo">Your Name</maintainer>
+  <license>TODO</license>
+
+  <!-- 构建工具依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- 运行时依赖 -->
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+
+  <!-- 自定义消息依赖 -->
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <!-- Python 依赖 -->
+  <exec_depend>python3-ultralytics</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+</package>

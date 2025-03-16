@@ -1,0 +1,8 @@
+prefix=/home/liyuhang/Ros_arm/devel
+
+Name: yolov8_ros
+Description: Description of yolov8_ros
+Version: 0.0.0
+Cflags: -I/home/liyuhang/Ros_arm/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs sensor_msgs cv_bridge message_runtime
