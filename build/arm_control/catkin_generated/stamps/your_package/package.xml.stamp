@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>your_package</name>
+  <version>0.0.0</version>
+  <description>
+    A ROS package for visual grasping using YOLOv8 and MoveIt!.
+  </description>
+
+  <maintainer email="user@todo.todo">Your Name</maintainer>
+  <license>TODO</license>
+
+  <!-- 构建工具依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- 运行时依赖 -->
+  <depend>rospy</depend>
+  <depend>moveit_commander</depend>
+  <depend>geometry_msgs</depend>
+  <depend>yolov8_ros</depend>
+</package>

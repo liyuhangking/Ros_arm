@@ -12,6 +12,7 @@ This is a project about robotic arm. This project is developed on the basis of h
 # Development log
 | Date |  Task   |
 | ---  |  ---     |
-|2025.03.01-2025.3.16|构建开发框架,选定机械臂仿真模型,D435i深度相机与yolov8结合识别|
+|2025.03.01-2025.03.16|构建开发框架,选定机械臂仿真模型,D435i深度相机与yolov8结合识别|
+|2025.03.17-2025.03.23|初步完成视觉机械臂的仿真抓取，目前过于粗糙，有待改进|
 
 

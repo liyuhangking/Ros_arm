@@ -1,0 +1,8 @@
+prefix=/home/liyuhang/Ros_arm/install
+
+Name: your_package
+Description: Description of your_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

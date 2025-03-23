@@ -54,15 +54,19 @@ CMAKE_BINARY_DIR = /home/liyuhang/Ros_arm/build
 
 # The main recursive "all" target.
 all: gtest/all
+all: ros_moveit_config/all
 all: my_robot_description/all
 all: yolov8_ros/all
+all: arm_control/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: ros_moveit_config/preinstall
 preinstall: my_robot_description/preinstall
 preinstall: yolov8_ros/preinstall
+preinstall: arm_control/preinstall
 
 .PHONY : preinstall
 
@@ -73,10 +77,30 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: ros_moveit_config/clean
 clean: my_robot_description/clean
 clean: yolov8_ros/clean
+clean: arm_control/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory arm_control
+
+# Recursive "all" directory target.
+arm_control/all:
+
+.PHONY : arm_control/all
+
+# Recursive "preinstall" directory target.
+arm_control/preinstall:
+
+.PHONY : arm_control/preinstall
+
+# Recursive "clean" directory target.
+arm_control/clean:
+
+.PHONY : arm_control/clean
 
 #=============================================================================
 # Directory level rules for directory gtest
@@ -255,6 +279,24 @@ my_robot_description/clean: my_robot_description/CMakeFiles/visualization_msgs_g
 my_robot_description/clean: my_robot_description/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
 
 .PHONY : my_robot_description/clean
+
+#=============================================================================
+# Directory level rules for directory ros_moveit_config
+
+# Recursive "all" directory target.
+ros_moveit_config/all:
+
+.PHONY : ros_moveit_config/all
+
+# Recursive "preinstall" directory target.
+ros_moveit_config/preinstall:
+
+.PHONY : ros_moveit_config/preinstall
+
+# Recursive "clean" directory target.
+ros_moveit_config/clean: ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : ros_moveit_config/clean
 
 #=============================================================================
 # Directory level rules for directory yolov8_ros
@@ -528,6 +570,33 @@ gtest: gtest/googletest/CMakeFiles/gtest.dir/rule
 gtest/googletest/CMakeFiles/gtest.dir/clean:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir
+
+# All Build rule for target.
+ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/liyuhang/Ros_arm/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all
+
+# Build rule for subdir invocation for target.
+ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liyuhang/Ros_arm/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liyuhang/Ros_arm/build/CMakeFiles 0
+.PHONY : ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : ros_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Target rules for target my_robot_description/CMakeFiles/dynamic_reconfigure_gencfg.dir
