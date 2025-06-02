@@ -4,9 +4,12 @@ import rospy
 import cv2
 import numpy as np
 import pyrealsense2 as rs
+import tf2_ros
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from yolov8_ros.msg import Detection3D
+from visualization_msgs.msg import Marker
+from geometry_msgs.msg import TransformStamped
 from ultralytics import YOLO
 
 class YOLOv8Detector:
@@ -32,6 +35,12 @@ class YOLOv8Detector:
         # 发布检测结果
         self.detection_pub = rospy.Publisher('/yolov8/detections', Detection3D, queue_size=10)
 
+        # 初始化 TF 广播器
+        self.tf_broadcaster = tf2_ros.TransformBroadcaster()
+
+        # 初始化 Marker 发布器
+        self.marker_pub = rospy.Publisher('/visualization_marker', Marker, queue_size=10)
+
     def get_aligned_images(self):
         # 获取对齐的 RGB 图像和深度图像
         frames = self.pipeline.wait_for_frames()
@@ -51,6 +60,58 @@ class YOLOv8Detector:
 
         return depth_intrin, img_color, aligned_depth_frame
 
+    def publish_tf(self, position, class_name):
+        # 创建 TF 消息
+        tf_msg = TransformStamped()
+        tf_msg.header.stamp = rospy.Time.now()
+        tf_msg.header.frame_id = "camera_frame"  # 父坐标系（相机坐标系）
+        tf_msg.child_frame_id = f"detected_object_{class_name}"  # 子坐标系（检测到的物体坐标系）
+
+        # 设置位置
+        tf_msg.transform.translation.x = position[0] / 1000.0  # 转换为米
+        tf_msg.transform.translation.y = position[1] / 1000.0
+        tf_msg.transform.translation.z = position[2] / 1000.0
+
+        # 设置方向（默认朝向）
+        tf_msg.transform.rotation.w = 1.0
+
+        # 发布 TF
+        self.tf_broadcaster.sendTransform(tf_msg)
+
+    def publish_marker(self, position, class_name):
+        # 创建 Marker 消息
+        marker = Marker()
+        marker.header.frame_id = "camera_frame"  # 父坐标系（相机坐标系）
+        marker.header.stamp = rospy.Time.now()
+        marker.ns = class_name
+        marker.id = 0
+        marker.type = Marker.CUBE  # 立方体
+        marker.action = Marker.ADD
+
+        # 设置位置
+        marker.pose.position.x = position[0] / 1000.0  # 转换为米
+        marker.pose.position.y = position[1] / 1000.0
+        marker.pose.position.z = position[2] / 1000.0
+        marker.pose.orientation.w = 1.0  # 默认朝向
+
+        # 设置大小（立方体的边长）
+        marker.scale.x = 0.1  # X 轴长度
+        marker.scale.y = 0.1  # Y 轴长度
+        marker.scale.z = 0.1  # Z 轴长度
+
+        # 设置颜色
+        marker.color.r = 0.0  # 红色
+        marker.color.g = 1.0  # 绿色
+        marker.color.b = 0.0  # 蓝色
+        marker.color.a = 1.0  # 不透明度
+
+        # 设置生命周期
+        marker.lifetime = rospy.Duration(1.0)  # 1 秒后消失
+
+        # 发布 Marker
+        self.marker_pub.publish(marker)
+
+
     def run(self):
         rate = rospy.Rate(30)  # 30 Hz
         while not rospy.is_shutdown():
@@ -62,7 +123,7 @@ class YOLOv8Detector:
                 continue
 
             # 使用 YOLOv8 进行目标检测
-            results = self.model.predict(source=img_color, save=False, show_conf=False,conf=0.9)
+            results = self.model.predict(source=img_color, save=False, show_conf=False, conf=0.9)
 
             for result in results:
                 boxes = result.boxes.xywh.tolist()
@@ -86,6 +147,12 @@ class YOLOv8Detector:
 
                     # 发布检测结果
                     self.detection_pub.publish(detection_msg)
+
+                    # 发布 TF 坐标系
+                    self.publish_tf(camera_xyz, detection_msg.class_name)
+
+                    # 发布 Marker
+                    self.publish_marker(camera_xyz, detection_msg.class_name)
 
                     # 在图像上绘制中心点和坐标
                     cv2.circle(im_array, (ux, uy), 4, (255, 255, 255), 5)

@@ -38,6 +38,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/liyuhang/Ros_arm/src/yolov8_ros/CMakeLists.txt"
   "/home/liyuhang/Ros_arm/src/yolov8_ros/package.xml"
   "/home/liyuhang/Ros_arm/src/yolov8_ros/scripts/detector.py"
+  "/home/liyuhang/Ros_arm/src/yolov8_ros/scripts/detector_onnx.py"
   "/home/liyuhang/anaconda3/lib/cmake/GTest/GTestConfig.cmake"
   "/home/liyuhang/anaconda3/lib/cmake/GTest/GTestConfigVersion.cmake"
   "/home/liyuhang/anaconda3/lib/cmake/GTest/GTestTargets-release.cmake"

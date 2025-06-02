@@ -37,6 +37,7 @@ catkin_package(
 # 安装 Python 脚本
 catkin_install_python(PROGRAMS
   scripts/detector.py
+  scripts/detector_onnx.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

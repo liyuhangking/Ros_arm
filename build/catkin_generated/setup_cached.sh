@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
+export PATH='/opt/ros/noetic/bin:/home/liyuhang/anaconda3/envs/arm_yolo/bin:/home/liyuhang/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/liyuhang/anaconda3/bin:/usr/local/cuda/bin:/home/liyuhang/anaconda3/bin:/home/liyuhang/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/liyuhang/anaconda3/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/liyuhang/anaconda3/bin:/usr/local/cuda/bin'
 export PWD='/home/liyuhang/Ros_arm/build'

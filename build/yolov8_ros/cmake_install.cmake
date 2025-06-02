@@ -93,6 +93,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yolov8_ros" TYPE PROGRAM FILES "/home/liyuhang/Ros_arm/build/yolov8_ros/catkin_generated/installspace/detector_onnx.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolov8_ros/launch" TYPE DIRECTORY FILES "/home/liyuhang/Ros_arm/src/yolov8_ros/launch/")
 endif()
 
